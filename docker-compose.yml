@@ -1,0 +1,12 @@
+version: '2'
+services:
+  app:
+    build: 
+      context: "."
+      dockerfile: "./_docker/Dockerfile"
+    environment: 
+      HANDLER: "index.handler"
+      EVENT: "'{\"property\": \"value\", \"property2\": \"value2\"}'"
+    volumes:
+    - ".:/var/task/"
+    - "/var/task/node_modules"
